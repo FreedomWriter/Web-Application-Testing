@@ -32,7 +32,7 @@ export default function Display({
           <Center>{away}</Center>
         </Center>
         <Center>
-          <h3>INNINGS</h3>
+          <h3>INNING</h3>
           <Center>{inning}</Center>
         </Center>
         <Center>
