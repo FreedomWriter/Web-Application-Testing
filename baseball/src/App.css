@@ -15,8 +15,8 @@ input {
 }
 
 button {
-  width: 40%;
-  height: 40%;
+  width: 30%;
+  height: 30%;
   font-size: 3rem;
 }
 
@@ -28,6 +28,6 @@ button {
   align-items: center;
   border: 1px solid red;
   width: 90%;
-  height: 400px;
+  height: 250px;
   padding: 2%;
 }

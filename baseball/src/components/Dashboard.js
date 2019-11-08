@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { checkPropTypes } from "prop-types";
 
 export default function Dashboard({
   foul,
@@ -10,22 +9,35 @@ export default function Dashboard({
   count,
   player,
   foulHandler,
-  strikeHandler
+  strikeHandler,
+  ballHandler,
+  hitHandler,
+  runHandler,
+  changeHandler,
+  submitHandler
 }) {
-  console.log(
-    `Props from Dashboard - foul: ${foul}, ball: ${ball}, strike: ${strike}, hit: ${hit}, count: ${count}, foulHandler: ${foulHandler}, strikeHandler ${strikeHandler}:`
-  );
+  //   console.log(
+  //     `Props from Dashboard - foul: ${foul}, ball: ${ball}, strike: ${strike}, hit: ${hit}, count: ${count}, foulHandler: ${foulHandler}, strikeHandler ${strikeHandler}:`
+  //   );
   return (
     <div>
       <div className="button-container">
         <button onClick={foulHandler}>Foul</button>
-        <button>Ball</button>
+        <button onClick={ballHandler}>Ball</button>
         <button onClick={strikeHandler}>Strike</button>
-        <button>Hit</button>
+        <button onClick={hitHandler}>Hit</button>
+        <button onClick={runHandler}>Run</button>
       </div>
       <Center>
         <label htmlFor={player}> Player at Bat </label>
-        <input id={player} value={player} name={player} placeholder={player} />
+        <input
+          onChange={changeHandler}
+          id={player}
+          value={player}
+          name={player}
+          placeholder={player}
+          onSubmit={submitHandler}
+        />
       </Center>
     </div>
   );

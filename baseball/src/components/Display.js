@@ -11,21 +11,25 @@ export default function Display({
   player,
   inning,
   home,
-  away
+  away,
+  homeAtBat,
+  awayAtBat
 }) {
-  console.log(
-    `Props from Dashboard - foul: ${foul}, ball: ${ball}, strike: ${strike}, hit: ${hit}, count: ${count}, player: ${player}, inning: ${inning}, home: ${home}, away: ${away}`
-  );
+  //   console
+  //     .log
+  //     `Props from Dashboard - foul: ${foul}, ball: ${ball}, strike: ${strike}, hit: ${hit}, count: ${count}, player: ${player}, inning: ${inning}, home: ${home}, away: ${away}`
+  // ();
   return (
     <div>
       <Player>
         <h2>AT BAT</h2>
         <div className="player">{player}</div>
+        {homeAtBat ? <h3>Home at Bat</h3> : <h3>Away at Bat</h3>}
       </Player>
       <div className="container">
         <Center>
           <h3>Away</h3>
-          <Center>{home}</Center>
+          <Center>{away}</Center>
         </Center>
         <Center>
           <h3>INNINGS</h3>

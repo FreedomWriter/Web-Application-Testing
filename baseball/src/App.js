@@ -13,8 +13,22 @@ class App extends React.Component {
     inning: 1,
     home: 0,
     away: 0,
+    homeActive: true,
+    awayActive: false,
     player: "Jackie Robinson",
     hit: ""
+  };
+
+  changeHandler = e => {
+    this.setState({
+      player: e.target.value
+    });
+  };
+
+  submitHandler = e => {
+    this.setState({
+      player: ""
+    });
   };
 
   foulHandler = () => {
@@ -34,10 +48,68 @@ class App extends React.Component {
           ball: 0,
           outs: this.state.outs + 1
         });
+        if (this.state.outs === 2) {
+          this.setState({
+            outs: 0,
+            homeActive: !this.state.homeActive,
+            awayActive: !this.state.awayActive
+          });
+          if (this.state.inning <= 8) {
+            if (this.state.awayActive) {
+              this.setState({
+                inning: this.state.inning + 1
+              });
+            }
+          }
+        }
       }
     }
   };
+
+  ballHandler = () => {
+    if (this.state.ball <= 3)
+      this.setState({
+        ball: this.state.ball + 1
+      });
+    if (this.state.ball === 3) {
+      this.setState({
+        ball: 0
+      });
+    }
+  };
+
+  hitHandler = () => {
+    if (this.state.homeActive) {
+      this.setState({
+        ball: 0,
+        strike: 0
+      });
+    } else if (this.state.awayActive) {
+      this.setState({
+        ball: 0,
+        strike: 0
+      });
+    }
+  };
+
+  runHandler = () => {
+    if (this.state.homeActive) {
+      this.setState({
+        home: this.state.home + 1,
+        ball: 0,
+        strike: 0
+      });
+    } else if (this.state.awayActive) {
+      this.setState({
+        away: this.state.away + 1,
+        ball: 0,
+        strike: 0
+      });
+    }
+  };
   render() {
+    console.log(`Home team at bat? ${this.state.homeActive}`);
+    console.log(`Away team at bat? ${this.state.awayActive}`);
     return (
       <div>
         <Display
@@ -51,6 +123,8 @@ class App extends React.Component {
           inning={this.state.inning}
           home={this.state.home}
           away={this.state.away}
+          homeAtBat={this.state.homeActive}
+          awayAtBat={this.state.awayActive}
         />
         <Dashboard
           ball={this.state.ball}
@@ -60,6 +134,10 @@ class App extends React.Component {
           hit={this.state.hit}
           foulHandler={this.foulHandler}
           strikeHandler={this.strikeHandler}
+          ballHandler={this.ballHandler}
+          hitHandler={this.hitHandler}
+          runHandler={this.runHandler}
+          changeHandler={this.changeHandler}
         />
       </div>
     );
