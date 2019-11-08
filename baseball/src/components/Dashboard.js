@@ -1,16 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { checkPropTypes } from "prop-types";
 
-export default function Dashboard({ foul, ball, strike, hit, count, player }) {
+export default function Dashboard({
+  foul,
+  ball,
+  strike,
+  hit,
+  count,
+  player,
+  foulHandler,
+  strikeHandler
+}) {
   console.log(
-    `Props from Dashboard - foul: ${foul}, ball: ${ball}, strike: ${strike}, hit: ${hit}, count: ${count}`
+    `Props from Dashboard - foul: ${foul}, ball: ${ball}, strike: ${strike}, hit: ${hit}, count: ${count}, foulHandler: ${foulHandler}, strikeHandler ${strikeHandler}:`
   );
   return (
     <div>
       <div className="button-container">
-        <button>Foul</button>
+        <button onClick={foulHandler}>Foul</button>
         <button>Ball</button>
-        <button>Strike</button>
+        <button onClick={strikeHandler}>Strike</button>
         <button>Hit</button>
       </div>
       <Center>

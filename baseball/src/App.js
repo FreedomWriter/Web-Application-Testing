@@ -16,6 +16,27 @@ class App extends React.Component {
     player: "Jackie Robinson",
     hit: ""
   };
+
+  foulHandler = () => {
+    console.log(`Foul button clicked`);
+    if (this.state.strike <= 1) {
+      this.setState({ strike: this.state.strike + 1 });
+    }
+  };
+
+  strikeHandler = () => {
+    console.log(`Strike button clicked`);
+    if (this.state.strike <= 2) {
+      this.setState({ strike: this.state.strike + 1 });
+      if (this.state.strike === 2) {
+        this.setState({
+          strike: 0,
+          ball: 0,
+          outs: this.state.outs + 1
+        });
+      }
+    }
+  };
   render() {
     return (
       <div>
@@ -37,6 +58,8 @@ class App extends React.Component {
           foul={this.state.foul}
           count={this.state.count}
           hit={this.state.hit}
+          foulHandler={this.foulHandler}
+          strikeHandler={this.strikeHandler}
         />
       </div>
     );
