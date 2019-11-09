@@ -81,7 +81,7 @@ const Player = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid #414141;
+  border: 1px solid white;
   height: 100px;
   padding: 2%;
   margin: 2%;

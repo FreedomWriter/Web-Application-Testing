@@ -47,10 +47,11 @@ const Center = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  border: 1px solid #414141;
+  border: 1px solid white;
   width: 32%;
   height: 100px;
   padding: 2%;
   margin: 0 auto;
   font-size: 1.6rem;
+  background: white;
 `;
