@@ -111,7 +111,7 @@ class App extends React.Component {
     console.log(`Home team at bat? ${this.state.homeActive}`);
     console.log(`Away team at bat? ${this.state.awayActive}`);
     return (
-      <div>
+      <div className="page">
         <Display
           ball={this.state.ball}
           strike={this.state.strike}
