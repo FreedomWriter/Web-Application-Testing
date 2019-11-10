@@ -9,6 +9,9 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  outline: 3px solid #fff;
+  outline-offset: -2px;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -30,7 +33,7 @@ button {
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
-  background: #414141;
+  background: #252525;
   color: #ffffff;
   font-family: inherit;
   font-size: 1.6rem;
@@ -43,11 +46,12 @@ button {
 
 button:hover,
 button:focus {
-  background: #a2272d;
+  background: white;
+  color: #252525;
 }
 
 button:focus {
-  outline: 1px solid #fff;
+  outline: 1px solid #252525;
   outline-offset: -4px;
 }
 
@@ -57,6 +61,7 @@ button:active {
 
 html {
   font-size: 62.5%;
+  margin: 5%;
 }
 
 .container {
@@ -64,18 +69,19 @@ html {
   justify-content: space-evenly;
   font-size: 1.6rem;
   margin: 0 5%;
+  box-shadow: -3px 3px 4px 2px #a09f9f;
 }
 
 input {
   text-align: center;
   font-size: 2rem;
+  border: 1px solid #252525;
 }
 
 button {
   width: 30%;
-  height: 30%;
   font-size: 3rem;
-  border: 1px solid white;
+  box-shadow: -3px 3px 4px 2px #a09f9f;
 }
 
 .button-container {
@@ -84,9 +90,8 @@ button {
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
-  border: 1px solid white;
   width: 90%;
-  height: 250px;
+  height: 200px;
   padding: 2%;
 }
 

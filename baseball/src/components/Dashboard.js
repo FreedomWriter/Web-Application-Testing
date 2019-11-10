@@ -51,7 +51,9 @@ const Center = styled.div`
   width: 32%;
   height: 100px;
   padding: 2%;
-  margin: 0 auto;
+  margin: 5% auto;
   font-size: 1.6rem;
-  background: white;
+  background: #414141;
+  color: #fff;
+  box-shadow: -3px 3px 4px 2px #a09f9f;
 `;

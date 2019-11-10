@@ -21,15 +21,33 @@ export default function Display({
   // ();
   return (
     <div>
-      <Player>
-        <h2>AT BAT</h2>
+      {/* <Player> */}
+      {homeAtBat ? (
+        <Player>
+          {/* <FlexGrow>
+            <h2>AT BAT</h2>
+          </FlexGrow> */}
+          <div>
+            <div className="player">{player}</div>
+          </div>
+          <h3 className="home">Home Team</h3>
+        </Player>
+      ) : (
+        <Player>
+          <h2>AT BAT</h2>
+          <h3 className="away">Away at Bat</h3>
+          <div className="player">{player}</div>
+        </Player>
+      )}
+
+      {/* <h2>AT BAT</h2>
         <div className="player">{player}</div>
         {homeAtBat ? (
           <h3 className="home">Home at Bat</h3>
         ) : (
           <h3 className="away">Away at Bat</h3>
         )}
-      </Player>
+      </Player> */}
       <div className="container">
         {/* <ScoreBoard></ScoreBoard> */}
         <Center>
@@ -68,20 +86,20 @@ const Center = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid #414141;
+  border: 1px solid white;
   width: 32%;
-  height: 100px;
+  height: 75px;
   padding: 2%;
-  background: green;
+  background: #252525;
   color: #ffffff;
 `;
 
 const Player = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  border: 1px solid white;
+  box-shadow: -3px 3px 4px 2px #a09f9f;
   height: 100px;
   padding: 2%;
   margin: 2%;
@@ -97,10 +115,9 @@ const DisplayBox = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid #414141;
   width: 32%;
   height: 100px;
   padding: 2%;
-  background: white;
-  color: #414141;
+  background: #414141
+  color: white;;
 `;
